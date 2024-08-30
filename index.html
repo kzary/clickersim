@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Clicker Simulator</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="header" id="header">
+    <button onclick="adminbtn()" class="adminbtn"></button>
+  </div>
+  <div class="loadingscr" id="loadingscr">
+    <div class="loadscr">
+      <div class="logo">
+        <img src="svg/logo.svg" id="blogo">
+      </div>
+      <div class="loadingtext" id="loadingtext">
+        Loading<span class="dots"></span>
+      </div>
+      <div class="progressbar" id="progressbar">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+  </div>
+  <div class="body" id="body">
+    <div class="container" id="container">
+      <div class="game">
+        <div class="xp">
+          <div class="level">
+            <p class="levelctr">Level: </p>
+            <p id="plevel">1</p>
+          </div>
+          <div class="xpbar">
+            <div id="xppgr"></div>
+          </div>
+          <div class="levelupxp">
+            <p id="xp">0</p>
+            <p class="slash">/</p>
+            <p id="reqxp">1000</p>
+          </div>
+        </div>
+        <div class="scoreboard">
+          <div class="score">
+            <img src="pictures/click.png" id="scoreicon">
+            <p id="clicks" class="scr"> 0</p>
+          </div>
+          <div class="score">
+            <img src="pictures/money.png" id="scoreicon">
+            <p id="money" class="scr"> 0</p>
+          </div>
+          <div class="score">
+            <img src="pictures/click.png" id="scoreicon">
+            <p id="damage" class="scr">1</p>
+          </div>
+          <div class="score">
+            <img src="pictures/rebirth.png" id="scoreicon">
+            <p id="rebirth" class="scr">0</p>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="button">
+          <button class="btn" id="btn" onclick="ctr()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="adminlogin" id="adminlogin">
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="text" class="admin" id="adminusername" placeholder="Enter admin username" />
+    <br>
+    <input type="password" class="admin" id="adminpassword" placeholder="Enter admin password" />
+    <p id="error">Incorrect Credentials</p>
+    <br>
+    <button id="adminloginbtn" onclick="adminlogin()">Login</button>
+  </div>
+  <div class="adminpanel" id="adminpanel">
+    <br>
+    <br>
+    <br>
+    <br>
+    <input id="addmoney" placeholder="Enter Money Amount" />
+    <br>
+    <input id="addDMG" placeholder="Enter DMG Amount" />
+    <p id="added">Money and Damage Added</p>
+    <br>
+    <button onclick="addamt()" id="adminadd">Add</button>
+  </div>
+  <div class="floating-buttons" id="floating-buttons">
+    <button class="floating-btn" id="floatBtn1" onclick="rebirthicn()"></button>
+    <button class="floating-btn" id="floatBtn2" onclick="function2()"></button>
+  </div>
+
+  <div class="floating-window" id="window1">
+    <div class="floating-window-content">
+      <span class="close-btn" onclick="closeFloatingWindow('window1')">&times;</span>
+      <p class="rbthtitle">Rebirth</p>
+      <p class="rebirthinfo">It resets your money dmg but gives you <span class="bst">100%</span>boost</p>
+      <p id="rebirthctr">Rebirths: 0</p>
+      <p id="rebirthboost">Total Boost: 0%</p>
+      <p id="rebirthreq">Level required = <span class="rbthreq">5</span></p>
+      <button id="rebirthbtn" onclick="rebirthbtn()">Rebirth</button>
+      <p id="rebirthreqerror">You dont meet requirements for rebirth</p>
+    </div>
+  </div>
+  <div class="floating-window" id="window2">
+    <div class="floating-window-content">
+      <span class="close-btn" onclick="closeFloatingWindow('window2')">&times;</span>
+      <div class="shop">
+        <div class="title">
+          <h2> <u> Shop </u> </h2>
+        </div>
+        <div class="shopitems">
+          <div class="item">
+            <div class="itemN">
+              <p class="itemname"> Damage </p>
+              <div class="level">
+                <p class="leveln">Level: </p>
+                <p id="damagelevel">1</p>
+              </div>
+            </div>
+            <div class="info">
+              <div class="iteminfo" id="dmginfo">
+                increase your<br> click damage by <br>
+                <p id="sidi">2</p>
+              </div>
+              <div class="buy">
+                <button onclick="buyDMG()" id="DMGcost" class="buybtn"> 10</button>
+              </div>
+            </div>
+          </div>
+          <br class="itemspace">
+          <div class="item">
+            <div class="itemN">
+              <p class="commingsoon"> Coming Soon.. </p>
+              <div class="level">
+                <p class="leveln">Level: </p>
+                <p id="damagelevel">0</p>
+              </div>
+            </div>
+            <div class="info">
+              <div class="iteminfo" id="dmginfo">
+                Coming soon...
+              </div>
+              <div class="buy">
+                <button onclick="" id="*cost" class="buybtn"> ??</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          </body>
+
+</html>
